@@ -1,7 +1,4 @@
-<h4 class="ui center aligned medium icon header">
-  <i class="circular orange coffee icon"></i>
-  Say Something
-</h4>
+
 
 <div class="ui two column grid">
 	<div class="twelve wide column">
@@ -12,12 +9,12 @@
 				</div>
 			</div>
 			<div class="extra content">
-				<form class="ui reply form">
+				<%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path) do |f| %>
 					<div class="ui fluid icon input">
-						<input type="text" placeholder="Enter a message...">
-						<i class="bordered inverted orange edit icon"></i>
+						<%= f.text_field :body %>
+						<%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
 					</div>
-				</form>
+				<% end %>
 			</div>
 		</div>
     </div>
