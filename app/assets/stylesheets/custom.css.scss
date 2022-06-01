@@ -6,3 +6,14 @@
 body {
 	background-image: linear-gradient(180deg, #F77F00 30.12%, rgba(250, 163, 7, 0) 192.78%);
 }
+
+#messages {
+	height: 15em;
+	overflow: auto;
+}
+
+.input {
+	button {
+		display:none;
+	}
+}
