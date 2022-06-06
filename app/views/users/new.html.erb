@@ -3,13 +3,14 @@
 </h2>
 
 <div class="ui text container">
-		<form class="ui form">
+	<div class="ui placeholder segment" id="signup-window">
+		<%= form_with(model: @user, class: "ui form", local: true) do |f| %>
 			<div class="field">
-				<label>Username</label>
+				<%= f.label :username %>
 				<input type="text" name="username" placeholder="Username">
 			</div>
 			<div class="field">
-				<label>Password</label>
+				<%= f.label :password %>
 				<input type="text" name="password" placeholder="Password">
 			</div>
 			<div class="field">
@@ -17,6 +18,7 @@
 					<input type="checkbox" tabindex="0" class="hidden">
 				</div>
 			</div>
-			<button class="ui button" type="submit">Submit</button>
-		</form>
+			<%= f.submit(@user.new_record? ? "Submit" : "Update account", class: "ui orange submit button") %>
+		<% end %>
+	</div>
 </div>
